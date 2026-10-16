@@ -1,0 +1,6 @@
+-r requirements.txt
+# Shrinking the search model (scripts/get_models.py) and packaging (build.py)
+onnx>=1.15
+pyinstaller>=6.6
+# Tests
+pytest>=8.0

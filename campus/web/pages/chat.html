@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Assistant</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <header class="bar">
+    <span class="brand">Campus Assistant <span class="offline-badge">Offline</span></span>
+    <nav>
+      <span id="who" class="muted small"></span>
+      <a id="adminLink" href="/admin" hidden>Admin</a>
+      <a href="/logout">Sign out</a>
+    </nav>
+  </header>
+
+  <main class="chat">
+    <!-- 1. Waiting / recording -->
+    <section id="idle" class="screen">
+      <button id="mic" class="mic" aria-label="Tap to speak">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="9" y="2" width="6" height="12" rx="3"/>
+          <path d="M5 10a7 7 0 0 0 14 0"/>
+          <path d="M12 17v5"/>
+        </svg>
+      </button>
+      <p id="micHint" class="hint">Tap to speak</p>
+      <p id="timer" class="live" aria-live="polite"></p>
+    </section>
+
+    <!-- 2. Processing -->
+    <section id="processing" class="screen" hidden>
+      <p id="pQuestion" class="question"></p>
+      <ol class="steps" aria-live="polite">
+        <li data-step="hearing">Turning your voice into text</li>
+        <li data-step="finding">Finding the answer</li>
+      </ol>
+    </section>
+
+    <!-- 3. Answer -->
+    <section id="answer" class="screen" hidden>
+      <p id="aQuestion" class="question"></p>
+      <div class="card answer">
+        <p id="aText"></p>
+        <p id="aSources" class="muted small sources"></p>
+      </div>
+      <div class="row">
+        <button id="replay" class="btn">Play again</button>
+        <button id="stop" class="btn">Stop speaking</button>
+        <button id="again" class="btn primary">Ask another</button>
+      </div>
+      <p id="noVoice" class="muted small" hidden>This computer has no text-to-speech voice, so the answer is shown only as text.</p>
+    </section>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <form id="typeForm" class="type-form">
+      <input id="typeInput" maxlength="500" placeholder="Or type your question" aria-label="Type your question" autocomplete="off">
+      <button class="btn">Ask</button>
+    </form>
+  </main>
+
+  <script src="/static/js/common.js"></script>
+  <script src="/static/js/recorder.js"></script>
+  <script src="/static/js/chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Assistant</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="center">
+  <main class="card narrow">
+    <h1>Campus Assistant <span class="offline-badge">Offline</span></h1>
+    <p class="muted">Ask questions about the college by voice. Everything runs on this computer.</p>
+    <form id="loginForm">
+      <label>ID (USN or staff ID)
+        <input id="login" required maxlength="64" autocomplete="username" autofocus>
+      </label>
+      <label>Password
+        <input id="password" type="password" required autocomplete="current-password">
+      </label>
+      <button class="btn primary block">Sign in</button>
+    </form>
+    <p id="error" class="error" role="alert" hidden></p>
+  </main>
+  <script src="/static/js/common.js"></script>
+  <script src="/static/js/login.js"></script>
+</body>
+</html>

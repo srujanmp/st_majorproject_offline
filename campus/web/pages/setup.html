@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>First-time setup · Campus Assistant</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="center">
+  <main class="card narrow">
+    <h1>Welcome</h1>
+    <p class="muted">First-time setup. Create the admin account. You'll register your face on the next screen.</p>
+    <p id="models" class="warning" hidden></p>
+    <form id="setupForm">
+      <label>Your ID (e.g. staff ID)
+        <input id="login" required maxlength="64" autocomplete="username">
+      </label>
+      <label>Your name
+        <input id="name" required maxlength="100" autocomplete="name">
+      </label>
+      <label>Password (at least 6 characters)
+        <input id="password" type="password" required minlength="6" autocomplete="new-password">
+      </label>
+      <label>Password again
+        <input id="password2" type="password" required minlength="6" autocomplete="new-password">
+      </label>
+      <button class="btn primary block">Create admin account</button>
+    </form>
+    <p id="error" class="error" role="alert" hidden></p>
+  </main>
+  <script src="/static/js/common.js"></script>
+  <script src="/static/js/setup.js"></script>
+</body>
+</html>

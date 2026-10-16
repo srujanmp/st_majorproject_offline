@@ -1,0 +1,6 @@
+# Everything the app needs at runtime (all work offline once installed).
+flask>=3.0
+waitress>=3.0
+numpy>=1.26
+onnxruntime>=1.17
+vosk>=0.3.44
